@@ -21,6 +21,7 @@ bob.hello
 alice.hello
 
 
+
 =begin
 
 「initializeメソッドの機能
