@@ -11,7 +11,7 @@ end
 c = C.new
 p c.meth  #=> meth
 
-
+pp
 =begin
 モジュール
 インスタンスを持てない
