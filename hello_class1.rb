@@ -1,6 +1,4 @@
 
-
-
 class HelloWorld
   def initialize(myname = "Ruby")
     @name = myname

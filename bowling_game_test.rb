@@ -63,6 +63,30 @@ class BowlingGametest < Minitest::Unit::TestCase
     assert_equal 71, @game.score
   end
 
+  def test_ストライクの後のスペア
+    @game.record_shot(10)
+    @game.record_shot(5)
+    @game.record_shot(5)
+    @game.record_shot(3)
+    record_mamy_shots(15, 0) #全体では、19発になる
+    assert_equal 36, @game.score
+  end
+
+  def test_ダブルの後のスペア
+    @game.record_shot(10)
+    @game.record_shot(10)
+    @game.record_shot(5)
+    @game.record_shot(5)
+    @game.record_shot(3)
+    record_mamy_shots(13, 0)  #ダブルがある為、全体では18発になる
+    assert_equal 61, @game.score
+  end
+
+  def test_全ての投球がガターの場合の第1フレームの得点
+    @game.many_shots(20, 0)
+    assert_equal 0, @game.frame_score(1)
+  end
+
   private
 
   def record_mamy_shots(count, pins)
